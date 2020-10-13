@@ -1,0 +1,51 @@
+{
+  "market": "APX Power NL Hourly",
+  "date_applied": 1573599600000,
+  "values": [
+    {
+      "tLabel": "Order",
+      "cLabel": "noLabel",
+      "value": "1",
+      "unit": "none",
+      "position": 0,
+      "chartShow": false,
+      "chartType": "none",
+      "color": null,
+      "precision": 0
+    },
+    {
+      "tLabel": "Hour",
+      "cLabel": "noLabel",
+      "value": "01",
+      "unit": "none",
+      "position": 1,
+      "chartShow": false,
+      "chartType": "none",
+      "color": null,
+      "precision": 0
+    },
+    {
+      "tLabel": "Net Volume",
+      "cLabel": "Volume",
+      "value": "4514.20",
+      "unit": "MWh",
+      "position": 2,
+      "chartShow": true,
+      "chartType": "column",
+      "color": "column1",
+      "precision": 1
+    },
+    {
+      "tLabel": "Price",
+      "cLabel": "Price",
+      "value": "34",
+      "unit": "Euro/MWh",
+      "position": 3,
+      "chartShow": true,
+      "chartType": "spline",
+      "color": "spline2",
+      "precision": 2
+    }
+  ]
+}
+

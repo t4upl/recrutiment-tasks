@@ -1,0 +1,63 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: "io.spring.dependency-management"
+
+group 'net.sympower.iv.apx'
+version =  '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.5'
+}
+
+jar {
+  baseName = 'sympower-iv-apx'
+}
+
+dependencyManagement {
+  imports {
+    mavenBom("org.springframework.boot:spring-boot-starter-parent:1.5.2.RELEASE")
+  }
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-starter-data-jpa")
+  compile("org.slf4j:slf4j-api:1.7.21")
+  compile("com.fasterxml.jackson.core:jackson-databind:2.8.6")
+  compile("com.fasterxml.jackson.core:jackson-annotations:2.8.6")
+  compile(group: 'org.projectlombok', name: 'lombok', version: '1.18.10')
+  testCompile("junit:junit:4.12")
+}
+
+test {
+  testLogging.showStandardStreams = true
+}
+
+task createPom  {
+  pom {
+    project {
+      groupId "net.sympower.iv.apx"
+      artifactId 'sympower-iv-apx'
+      version '1.0.0-SNAPSHOT'
+    }
+  }.writeTo("pom.xml")
+}
